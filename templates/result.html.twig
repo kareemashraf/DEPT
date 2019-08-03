@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="header">
+       <a class="home-header" href="{{ path('Homepage') }}">Home</a>
+    </div>
+    <div id="wrapper">
+        <div id="container">
+
+            {% for result in results %}
+
+                <table id="myTable" class="table">
+                    <tbody>
+                        <tr>
+                         <td>
+                             {# use a fallback image incase the image is not available #}
+                             {% if not result['poster_path'] %}
+                             <img class="poster" src="http://1.bp.blogspot.com/_NP2JqFozr4g/TU1i7aCqlOI/AAAAAAAAAJ4/7enC2WxDu44/s1600/Fallback.png">
+                             {% else %}
+                                 <img class="poster" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result['poster_path'] }}">
+                             {% endif %}
+                             <h3><a id="movie_{{ result["id"] }}" class="title result" href="https://www.themoviedb.org/movie/{{ result["id"] }}" title="{{ result["title"] }}" alt="{{ result["title"] }}">{{ result["title"] }}</a></h3>
+                             <span>Votes: </span> <span class="vote_average">{{ result["vote_average"] }}
+                                 <span id="rating" class="glyphicons glyphicons-star x1 rating movie"></span>
+                            </span></br>
+                            <p><i> {{ result['release_date'] }} </i></p>
+                            <a name="fb_share" type="button" href="https://www.facebook.com/sharer.php?u=https://player.vimeo.com/video/{{result["vimeo"]["id"]}}&t={{ result["title"] }}"><img src="/img/fbshare.png" style="width:100px"></a>
+
+                         </td>
+                         <td>
+                             <p class="overview">{{ result["overview"] }}</p>
+                             <p class="view_more">
+                                 <a id="movie_{{ result["id"] }}" class="result" href="https://www.themoviedb.org/movie/{{ result["id"] }}" title="{{ result["title"] }}" alt="{{ result["title"] }}">More Info</a>
+                             </p>
+                                 <iframe src="https://player.vimeo.com/video/{{result["vimeo"]["id"]}}" width="540" height="260" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                <p>
+                                    {#<a href="https://vimeo.com/350954618">{{result["vimeo"]["name"]}}</a>#} 
+                                from <a href="https://vimeo.com/350954618">{{result["vimeo"]["user"]}}</a> 
+                                </p>
+                         </td>
+                         </tr>
+                         
+                    </tbody>
+                </table>
+
+                {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

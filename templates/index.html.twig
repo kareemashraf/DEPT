@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="header">
+       <a class="home-header" href="">Home</a>
+    </div>
+    <div id="wrapper">
+        <div id="container">
+
+            <div><h2>Enter a search Value: </h2></div>
+            <form method="post" action="/search">
+
+             <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-success go" type="submit">Go!</button>
+              </span>
+              <input type="text" name="search" class="form-control movie-title" required placeholder="Search by movie's title"></br>
+             </div>
+
+            </form>
+            <center><img src="/img/giphy.gif" style="width:500px" class="buffer loader"></center>
+        </div>
+    </div>
+{% endblock %}
