@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpClient\HttpClient;
 use Vimeo\Vimeo;
 
-class SearchController extends AbstractController
+class ApiController extends AbstractController
 {
 	private $tmdb;
 	private $vimeoClientId;

@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class IndexController extends SearchController
+class IndexController extends ApiController
 {
 
 	/**
