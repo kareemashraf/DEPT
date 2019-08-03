@@ -1,5 +1,5 @@
 # DEPT Home Assignment (IMDB & Vimeo)
-can be tested online on 
+can be tested online on http://ec2-34-242-203-164.eu-west-1.compute.amazonaws.com/
 <hr>
 
 ## Built With (Tech stack)
@@ -50,6 +50,8 @@ composer test
 The API is generally RESTFUL and returns results in JSON.
 
 visit the API DOCS on /api/doc
+
+http://ec2-34-242-203-164.eu-west-1.compute.amazonaws.com/api/doc
 
 |HTTP | resource | Description |
 | --- | --- | --- |
