@@ -108,3 +108,13 @@ code {
 .loader{
     display: none;
 }
+
+.contact-form{
+    width: 50%;
+    margin-top: 100px;
+    border: #5cb85c;
+    border-width: medium;
+    border-style: dotted;
+    padding: inherit;
+}
+

@@ -2,6 +2,9 @@
     "ankitpokhrel/tus-php": {
         "version": "v0.1.0"
     },
+    "aws/aws-sdk-php": {
+        "version": "3.108.3"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -119,6 +122,9 @@
     },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.4.0"
     },
     "nelmio/api-doc-bundle": {
         "version": "3.0",

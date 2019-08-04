@@ -18,7 +18,23 @@
              </div>
 
             </form>
+            
             <center><img src="/img/giphy.gif" style="width:500px" class="buffer loader"></center>
+
+            <div class="contact-form">
+            <p>Request by Email</p>
+                <form id="contact" method="post">
+
+                 <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-success sendEmail" type="submit">Send</button>
+                  </span>
+                  <input type="text" name="title" id="title-req" class="form-control" required value="" placeholder="Request a movie title">
+                  <input type="email" name="email" id="email-req" class="form-control" required value="" placeholder="Enter your Email Address">
+                 </div>
+                 <p class="notification"></p>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}
