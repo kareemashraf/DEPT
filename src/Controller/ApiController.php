@@ -77,7 +77,7 @@ class ApiController extends AbstractController
     }
 
     /**
-     * @Route("/api/send/{email}/movie/{movie}", methods={"GET"})
+     * @Route("/api/send/{email}/movie/{movie}", methods={"POST"})
      */
     public function send($email, $movie)
     {
@@ -87,7 +87,7 @@ class ApiController extends AbstractController
 
         $configuration_set = 'DEPT';
         $subject = 'IMDB about '.$movie;
-        
+
         $key = getenv('AWS_KEY'); 
         $secret = getenv('AWS_SECRET'); 
 
