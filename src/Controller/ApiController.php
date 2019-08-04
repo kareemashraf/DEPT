@@ -78,12 +78,11 @@ class ApiController extends AbstractController
     }
 
     /**
-     * @Route("/api/send/movie", methods={"POST"})
+     * @Route("/api/send/{email}/movie/{movie}", methods={"POST"})
+     *
      */
-    public function send(Request $request)
+    public function send($email, $movie)
     {
-    	$movie = $request->get('movie');
-    	$email = $request->get("email");
 
         $listOfVideos = $this->imdb($movie);
         $resultsArray = json_decode($listOfVideos->getContent(), true);

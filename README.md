@@ -26,7 +26,7 @@ http://ec2-34-242-203-164.eu-west-1.compute.amazonaws.com/api/doc
 |HTTP | resource | Description |
 | --- | --- | --- |
 | GET | /api/trailer/{title} | get IMDB list of movies with the mentioned title with aggregated data from Vimeo |
-| POST | /api/send/movie | send an Email with a HTML page, parameteres {movie}(string), {email}(string) |
+| POST | /api/send/{email}/movie/{movie} | send an Email with a HTML page |
 
 
 ## Getting Started
