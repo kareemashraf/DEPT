@@ -82,8 +82,8 @@ class ApiController extends AbstractController
      */
     public function send(Request $request)
     {
-    	$movie = $request->request->get("movie");
-    	$email = $request->request->get("email");
+    	$movie = $request->get('movie');
+    	$email = $request->get("email");
 
         $listOfVideos = $this->imdb($movie);
         $resultsArray = json_decode($listOfVideos->getContent(), true);
