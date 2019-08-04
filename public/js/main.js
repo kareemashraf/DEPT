@@ -29,7 +29,8 @@ function sendEmail(){
 		$('.notification').html('<i style="color: blue;">Email is being sent! Please Wait...</i>');
 	
 		$.ajax({
-            url:"/api/send/"+email+"/movie/"+title,
+            url:"/api/send/movie",
+            data: {'email': email,'movie': title},
             type: "POST",
             async: true,
             success: function (data)

@@ -7,6 +7,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpClient\HttpClient;
 use Aws\Ses\SesClient;
 use Vimeo\Vimeo;
@@ -77,10 +78,13 @@ class ApiController extends AbstractController
     }
 
     /**
-     * @Route("/api/send/{email}/movie/{movie}", methods={"POST"})
+     * @Route("/api/send/movie", methods={"POST"})
      */
-    public function send($email, $movie)
+    public function send(Request $request)
     {
+    	$movie = $request->request->get("movie");
+    	$email = $request->request->get("email");
+
         $listOfVideos = $this->imdb($movie);
         $resultsArray = json_decode($listOfVideos->getContent(), true);
         $html_body = $this->renderView('result.html.twig', ['results' => $resultsArray]);
