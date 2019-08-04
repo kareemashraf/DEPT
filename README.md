@@ -16,6 +16,17 @@ can be tested online on http://ec2-34-242-203-164.eu-west-1.compute.amazonaws.co
 <hr>
 
 
+## API
+The API is generally RESTFUL and returns results in JSON.
+
+visit the API DOCS on /api/doc
+
+http://ec2-34-242-203-164.eu-west-1.compute.amazonaws.com/api/doc
+
+|HTTP | resource | Description |
+| --- | --- | --- |
+| GET | /api/trailer/{title} | get IMDB list of movies with the mentioned title with aggregated data from Vimeo |
+| GET | /api/send/{email}/movie/{movie}| send an Email with a HTML page |
 
 
 ## Getting Started
@@ -45,17 +56,6 @@ and visit [http://localhost:8000/](http://localhost:8000/) to see the applicatio
 ```bash
 composer test
 ```
-
-## API
-The API is generally RESTFUL and returns results in JSON.
-
-visit the API DOCS on /api/doc
-
-http://ec2-34-242-203-164.eu-west-1.compute.amazonaws.com/api/doc
-
-|HTTP | resource | Description |
-| --- | --- | --- |
-| GET | /api/trailer/{title} | get IMDB list of movies with the mentioned title with aggregated data from Vimeo |
 
 
 
