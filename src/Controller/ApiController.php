@@ -86,6 +86,8 @@ class ApiController extends AbstractController
 
         $listOfVideos = $this->imdb($movie);
         $resultsArray = json_decode($listOfVideos->getContent(), true);
+
+        if (!empty($resultsArray)) {
         $html_body = $this->renderView('result.html.twig', ['results' => $resultsArray]);
 
         $configuration_set = 'DEPT';
@@ -137,5 +139,9 @@ class ApiController extends AbstractController
             die($e->getMessage());
         }
         //end sending the email
+        }else{
+        	return new Response("movie doesnt exist!");
+        }
+        
     }
 }
